@@ -1,0 +1,232 @@
+{
+  "Django": {
+    "Setup": [
+      {
+        "title": "Install Django",
+        "code": "pipenv install django"
+      },
+      {
+        "title": "Start project",
+        "code": "pipenv run django-admin startproject config ."
+      },
+      {
+        "title": "Start app",
+        "code": "pipenv run python manage.py startapp"
+      },
+      {
+        "title": "Run server",
+        "code": "pipenv run python manage.py runserver"
+      }
+    ],
+    "Migrations": [
+      {
+        "title": "Make migrations",
+        "code": "pipenv run python manage.py makemigrations"
+      },
+      {
+        "title": "Apply migrations",
+        "code": "pipenv run python manage.py migrate"
+      }
+    ],
+    "Models": [
+      {
+        "title": "imports",
+        "code": "from django.core.validators import MinValueValidator, MaxValueValidator\nfrom django.core.exceptions import ValidationError"
+      },
+      {
+        "title": "Base Class",
+        "code": "class ModelName(models.Model):\n    change_name = models.CharField(max_length=100)\n\n    def __str__(self):\n        return self.change_name"
+      },
+      {
+        "title": "CharField",
+        "code": "field_name = models.CharField(max_length=100)"
+      },
+      {
+        "title": "TextField",
+        "code": "field_name = models.TextField()"
+      },
+      {
+        "title": "Integer Field",
+        "code": "field_name = models.IntegerField()"
+      },
+      {
+        "title": "Valdiators",
+        "code": "validators=[]"
+      },
+      {
+        "title": "Boolean Field",
+        "code": "field_name = models.BooleanField(default=True)"
+      },
+      {
+        "title": "Date Field",
+        "code": "field_name = models.DateField()"
+      },
+      {
+        "title": "automatically today date",
+        "code": "auto_now_add=True"
+      },
+      {
+        "title": "Date time auto",
+        "code": "field_name = models.DateTimeField(auto_now=True)"
+      },
+      {
+        "title": "ForignKey",
+        "code": "change_name = models.ForeignKey(\n    \"change_name\",\n    on_delete=models.CASCADE\n)"
+      },
+      {
+        "title": "Mny to many",
+        "code": "courses = models.ManyToManyField(\"Course\")"
+      },
+      {
+        "title": "One to one",
+        "code": "user = models.OneToOneField(\n    User,\n    on_delete=models.CASCADE\n)"
+      },
+      {
+        "title": "set null",
+        "code": "models.SET_NULL"
+      }
+    ],
+    "URLs": [
+      {
+        "title": "URL imports",
+        "code": "from django.urls import path, include"
+      },
+      {
+        "title": "urlpatterns",
+        "code": "urlpatterns = []"
+      }
+    ],
+    "Settings": [
+      {
+        "title": "Templates dir",
+        "code": "BASE_DIR / \"templates\""
+      },
+      {
+        "title": "Static files",
+        "code": "STATICFILES_DIRS = [BASE_DIR / \"static\"]"
+      },
+      {
+        "title": "Login",
+        "code": "LOGIN_REDIRECT_URL = \"home\""
+      },
+      {
+        "title": "Logout",
+        "code": "LOGOUT_REDIRECT_URL = \"home\""
+      }
+    ],
+    "Admin": [
+      {
+        "title": "Create superuser",
+        "code": "pipenv run python manage.py createsuperuser"
+      },
+      {
+        "title": "register",
+        "code": "admin.site.register(MyModel)"
+      }
+    ],
+    "Testing": [
+      {
+        "title": "Run tests",
+        "code": "pipenv run python manage.py test"
+      }
+    ],
+    "Views": [
+      {
+        "title": "import",
+        "code": "from django.views.generic import ListView, DetailView,CreateView,UpdateView,DeleteView"
+      },
+      {
+        "title": "List View",
+        "code": "class __ListView(ListView):\n    model=change_name\n    template_name='change.html'\n    context_object_name = 'change_name'"
+      },
+      {
+        "title": "Detail View",
+        "code": "class __DetailView(DetailView):\n    model=change_name\n    template_name='change.html'\n    context_object_name ='change_name'"
+      },
+      {
+        "title": "Create View",
+        "code": "class __CreateView(CreateView):\n    model = change_name\n    template_name = \"change_name.html\"\n    fields = []"
+      },
+      {
+        "title": "Update View",
+        "code": "class __UpdateView(UpdateView):\n    model = change_name\n    template_name = \"change_name.html\"\n    fields = []"
+      },
+      {
+        "title": "Delete View",
+        "code": "class __DeleteView(DeleteView):\n    model = change_name\n    template_name = \"change_name.html\"\n    success_url = reverse_lazy(\"change\")"
+      },
+      {
+        "title": "reverse lazy from d.urls",
+        "code": "success_url = reverse_lazy(\"change\")"
+      }
+    ],
+    "User": [
+      {
+        "title": "Login",
+        "code": "path(\"change_name/\", include(\"django.contrib.auth.urls\"))"
+      },
+      {
+        "title": "create view import",
+        "code": "from django.views.generic import CreateView"
+      },
+      {
+        "title": "user creation form import",
+        "code": "from django.contrib.auth.forms import UserCreationForm"
+      },
+      {
+        "title": "Signup view",
+        "code": "class SignUpView(CreateView):\n    form_class = UserCreationForm\n    success_url = reverse_lazy(\"login\")\n    template_name = \"registration/signup.html\""
+      }
+    ],
+    "debuging": [
+      {
+        "title": "get content",
+        "code": "Get-Content .\\config\\settings.py | Select-Object -Last 20"
+      }
+    ]
+  },
+  "Git": {
+    "Basics": [
+      {
+        "title": "Init repo",
+        "code": "git init"
+      },
+      {
+        "title": "Check status",
+        "code": "git status"
+      },
+      {
+        "title": "Stage all",
+        "code": "git add -A"
+      },
+      {
+        "title": "Commit",
+        "code": "git commit -m \"message\""
+      }
+    ],
+    "Remote": [
+      {
+        "title": "Add remote",
+        "code": "git remote add origin <url>"
+      },
+      {
+        "title": "Rename branch to main",
+        "code": "git branch -M main"
+      },
+      {
+        "title": "Push and track",
+        "code": "git push -u origin main"
+      }
+    ],
+    "Other": [
+      {
+        "title": ".gitignore note",
+        "code": ".gitignore"
+      },
+      {
+        "title": "page",
+        "code": "__pycache__/\n*.py[cod]\n\n\ndb.sqlite3"
+      }
+    ]
+  }
+}
